@@ -1,0 +1,26 @@
+pipeline:
+  name: Demo2
+  identifier: Demo2
+  projectIdentifier: GitX_Demo
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: Demo Stage
+        identifier: Demo_Stage
+        template:
+          templateRef: account.Demo_Stage
+          versionLabel: V1
+          templateInputs:
+            type: Custom
+            spec:
+              execution:
+                steps:
+                  - step:
+                      identifier: Echo
+                      type: ShellScript
+                      spec:
+                        source:
+                          type: Inline
+                          spec:
+                            script: <+input>
